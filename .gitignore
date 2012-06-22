@@ -39,4 +39,17 @@ Thumbs.db
 
 # Target Produced #
 ###################
-*/target/*
+*/target
+*/bin
+*/*/bin
+*/*/target
+*/.settings
+*/*/.settings
+*/*/gen
+*/gen
+
+# Other trash #
+.classpath
+.project
+.metadata
+*/*/project.properties
