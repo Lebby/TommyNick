@@ -1,6 +1,7 @@
 package tommynick.core;
 
 import static playn.core.PlayN.*;
+import tommynick.core.scenes.introduction.Introduction;
 
 import forscene.core.LoopController.AbstractGame;
 import forscene.core.entities.AbstractScene;
@@ -15,8 +16,9 @@ public class Main extends AbstractGame {
 
 	  @Override
 	  public void build() {
-		  AbstractScene scene = new SimpleScene();
-		  addScene(scene);
+		  //AbstractScene scene = new SimpleScene();
+		  //addScene(scene);
+		  addSceneGroup(new Introduction());
 	  }
 	  
 	  class SimpleScene extends AbstractScene{

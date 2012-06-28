@@ -7,7 +7,7 @@ public class GLSText extends AbstractSceneObject{
 
 	@Override
 	public void build() {
-		GraphicFactory.addImage("images/text_rendered/GLS.png",this);		
+		GraphicFactory.addImage("images/text_rendered/SGL.png",this);		
 	}
 
 	@Override
