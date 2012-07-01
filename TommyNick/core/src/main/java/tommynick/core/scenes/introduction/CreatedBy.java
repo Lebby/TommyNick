@@ -1,5 +1,6 @@
 package tommynick.core.scenes.introduction;
 
+import playn.core.Layer;
 import playn.core.PlayN;
 import tommynick.core.objects.logos.LebbyLogo;
 import tommynick.core.objects.textrend.CreatedByText;
@@ -9,6 +10,10 @@ import forscene.core.entities.AbstractScene;
 import forscene.core.events.system.EventManager;
 import forscene.core.events.system.TimeAlarmEvent;
 import forscene.core.util.GraphicFactory;
+import forscene.core.util.ShapeUtil;
+import forscene.core.util.Sizer;
+import forscene.core.util.position.Align;
+import forscene.core.util.position.PositionHelper;
 import forscene.exceptions.IDAlreadyPresentException;
 import forscene.exceptions.NoNameException;
 
@@ -74,7 +79,9 @@ public class CreatedBy extends AbstractScene{
 		time3.start();
 
 		try {
-			
+			Sizer sizer = new Sizer();
+			sizer.buildOnce();
+			//addSceneObject(sizer);
 			addSceneObject(ll);			
 			addSceneObject(gls);
 			addSceneObject(cbt);
@@ -88,8 +95,14 @@ public class CreatedBy extends AbstractScene{
 			cbt.hide();
 			
 			//position
-			
-			
+			PositionHelper.align(sizer, cbt, Align.TOP_CENTER);
+			PositionHelper.align(sizer, gls, Align.MIDDLE);
+			PositionHelper.align(sizer, ll, Align.BOTTOM_CENTER);
+			PlayN.log().debug(" lol sizer h" + ((Layer.HasSize)sizer.getRoot()).height() );
+			PlayN.log().debug(" lol sizer w" + ((Layer.HasSize)sizer.getRoot()).width() );
+			PlayN.log().debug(" lol 1 " + cbt.getRoot().transform());
+			PlayN.log().debug(" lol 2 " + gls.getRoot().transform());
+			PlayN.log().debug(" lol 3 " + ll.getRoot().transform());
 			
 		} catch (NoNameException e) {
 			e.printStackTrace();
