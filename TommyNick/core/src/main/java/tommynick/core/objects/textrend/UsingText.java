@@ -1,19 +1,13 @@
-package tommynick.core.objects.logos;
+package tommynick.core.objects.textrend;
 
 import forscene.core.entities.objects.AbstractSimpleSceneObject;
 import forscene.core.util.GraphicFactory;
 
-public class ForSceneLogo extends AbstractSimpleSceneObject {
-
-  @Override
-  public void load() {
-    super.load();
-    GraphicFactory.addImage("images/logos/forscene.png", this);
-  }
+public class UsingText extends AbstractSimpleSceneObject {
 
   @Override
   public void build() {
-
+    GraphicFactory.addImage("images/text_rendered/using.png", this);
   }
 
   @Override
@@ -21,5 +15,4 @@ public class ForSceneLogo extends AbstractSimpleSceneObject {
     // TODO Auto-generated method stub
 
   }
-
 }

@@ -1,4 +1,4 @@
-package tommynick.core.scenes.introduction;
+package tommynick.core.objects.logos;
 
 import forscene.core.entities.AbstractScene;
 

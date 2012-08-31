@@ -1,6 +1,6 @@
 package tommynick.core.objects.logos;
 
-import forscene.core.entities.AbstractSceneObject;
+import forscene.core.entities.objects.AbstractSceneObject;
 import forscene.core.util.GraphicFactory;
 
 public class InkscapeLogo extends AbstractSceneObject{
