@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import playn.core.Json;
 import playn.core.PlayN;
 import playn.core.ResourceCallback;
+import tommynick.core.scenes.introduction.Introduction;
 
 public class JsonSceneIntro {
   private Json.Object       json;
@@ -12,7 +13,7 @@ public class JsonSceneIntro {
   private ArrayList<String> title;
   private ArrayList<String> image;
 
-  public JsonSceneIntro() {
+  public JsonSceneIntro(final Introduction intro) {
     PlayN.assets().getText("text/introduction.en.json",
         new ResourceCallback<String>() {
           @Override
@@ -23,7 +24,8 @@ public class JsonSceneIntro {
 
           @Override
           public void error(Throwable err) {
-            PlayN.log().error("Failed to load: " + err.getMessage());
+            PlayN.log().error(
+                "JSonSceneIntro - Failed to load: " + err.getMessage());
           }
 
         });
@@ -32,15 +34,22 @@ public class JsonSceneIntro {
 
   private void loadData() {
     Json.Array tmp = json.getArray("page");
-    PlayN.log().debug(tmp.toString());
+
     text = new ArrayList<String>();
     image = new ArrayList<String>();
     title = new ArrayList<String>();
 
+    PlayN.log().debug("LOAD DATA DEBUG:");
+    PlayN.log().debug(" Lenght: " + tmp.length());
+
     for (int i = 0; i < tmp.length(); i++) {
+      PlayN.log().debug("Text : " + tmp.getObject(i).getString("text"));
+      PlayN.log().debug("Image : " + tmp.getObject(i).getString("image"));
+      PlayN.log().debug("Title : " + tmp.getObject(i).getString("title"));
+
       text.add(tmp.getObject(i).getString("text"));
-      image.add(tmp.getObject(i).getString("title"));
-      title.add(tmp.getObject(i).getString("image"));
+      image.add(tmp.getObject(i).getString("image"));
+      title.add(tmp.getObject(i).getString("title"));
     }
 
   }
@@ -74,4 +83,20 @@ public class JsonSceneIntro {
   public void setTitle(ArrayList<String> title) {
     this.title = title;
   }
+
+  /**
+   * @return the image
+   */
+  public ArrayList<String> getImage() {
+    return image;
+  }
+
+  /**
+   * @param image
+   *          the image to set
+   */
+  public void setImage(ArrayList<String> image) {
+    this.image = image;
+  }
+
 }

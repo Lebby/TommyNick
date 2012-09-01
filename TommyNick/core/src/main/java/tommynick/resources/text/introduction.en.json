@@ -3,43 +3,23 @@
   [    
     {
       "title":"In a unknown location in a Carribean ocean",
-      "text":
-      [
-        "A pirate ship, called: \"White Skull Stained (by blood) \" ",
-        "it cross seas seeking new adventures or new ship to plunder",
-        "or simply find a way to go home ..."
-      ],
-      "image":""
+      "text":"A pirate ship, called: \"White Skull Stained (by blood) \",\ncross sea seeking new adventures or new ship to plunder\nor simply find a way to go home ...",
+      "image":"images/backgrounds/white.jpg"
     },
     {
       "title":"A man called TommyNick",
-      "text":
-      [
-        "A strange and weirdo man, live in this ships",
-        "(The White Skull Stained ... by blood )"          
-      ].
-      "image":""
+      "text":"A strange and weirdo man, live in this ships (The White Skull Stained ... by blood )",      
+      "image":"images/backgrounds/white.jpg"
     },
     {
-      "title":"",
-      "text":
-      [
-        "TommyNick was a very very very ...",
-        "... very very very ...",
-        "... very very very ...",
-        "... very very very ...",
-        "... evil Pirate ..."
-      ],
-      "image":""
+      "title":" ",
+      "text":"TommyNick was a very very very ...\n ... very very very ...\n ... very very very ...\n ... very very very ...\n ... evil Pirate ...",      
+      "image":"images/backgrounds/white.jpg"
     },
     {
       "title":"A day",
-      "text":
-      [
-        "meanwhile it was busy in very very fearfull task",
-        "He begin to think ... "
-      ],
-      "image":""
+      "text":"meanwhile it was busy in very very fearfull task\n ... He begin to think ... ",      
+      "image":"images/backgrounds/white.jpg"
     }
   ]    
 }

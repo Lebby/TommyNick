@@ -1,15 +1,26 @@
 package tommynick.core;
 
+import playn.core.GroupLayer;
 import playn.core.ImageLayer;
 import forscene.core.entities.SimpleScene;
 import forscene.core.entities.objects.SimpleTextObject;
+import forscene.core.util.GraphicFactory;
+import forscene.exceptions.IDAlreadyPresentException;
+import forscene.exceptions.NoNameException;
 
 public class IntroScene extends SimpleScene {
   private String           title;
   private String           text;
   private SimpleTextObject titleText;
   private SimpleTextObject textText;
-  private ImageLayer       background;
+  private GroupLayer       background;
+
+  public IntroScene() {
+    super();
+    background = GraphicFactory.createGroupLayer();
+    titleText = new SimpleTextObject();
+    textText = new SimpleTextObject();
+  }
 
   /**
    * @return the title
@@ -24,7 +35,7 @@ public class IntroScene extends SimpleScene {
    */
   public void setTitle(String title) {
     this.title = title;
-
+    titleText.setText(title);
   }
 
   /**
@@ -40,6 +51,7 @@ public class IntroScene extends SimpleScene {
    */
   public void setText(String text) {
     this.text = text;
+    textText.setText(text);
   }
 
   /**
@@ -76,14 +88,35 @@ public class IntroScene extends SimpleScene {
    * @return the background
    */
   public ImageLayer getBackground() {
-    return background;
+    return (ImageLayer) background.get(0);
   }
 
   /**
-   * @param background the background to set
+   * @param background
+   *          the background to set
    */
   public void setBackground(ImageLayer background) {
-    this.background = background;
+    this.background.clear();
+    this.background.add(background);
+  }
+
+  @Override
+  public void build() {
+    super.build();
+    // background.clear();
+
+    try {
+      addSceneObject(textText);
+      addSceneObject(titleText);
+    } catch (NoNameException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    } catch (IDAlreadyPresentException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    getRoot().add(background);
+    toBackground(background);
   }
 
 }
